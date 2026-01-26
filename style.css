@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
 :root {
     --blue-50: #eff6ff;
     --blue-100: #dbeafe;
@@ -34,11 +35,12 @@
     --indigo-50: #eef2ff;
 }
 
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'poppins',Helvetica;
 }
 
 html {
@@ -50,8 +52,43 @@ body {
     color: var(--gray-900);
     transition: background-color 0.3s, color 0.3s;
 }
+/*reusable stylings*/
+.online-dot {
+    margin: 2px;
+    width: 10px;
+    height: 10px;
+    background: #2ecc71;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
 
-/* Add this to your existing CSS */
+.pulse::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(46, 204, 113, 0.6);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+
+
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
